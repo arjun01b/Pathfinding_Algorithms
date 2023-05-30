@@ -1,0 +1,30 @@
+1. https://www.geeksforgeeks.org/a-search-algorithm/
+
+if (cellDetails[i-1][j].f == FLT_MAX || 
+                        cellDetails[i-1][j].f > fNew) 
+                { 
+                    openList.insert( make_pair(fNew, 
+                                               make_pair(i-1, j))); 
+  
+                    // Update the details of this cell 
+                    cellDetails[i-1][j].f = fNew; 
+                    cellDetails[i-1][j].g = gNew; 
+                    cellDetails[i-1][j].h = hNew; 
+                    cellDetails[i-1][j].parent_i = i; 
+                    cellDetails[i-1][j].parent_j = j; 
+                } 
+
+
+2. https://www.techiedelight.com/lee-algorithm-shortest-path-in-a-maze/
+
+
+ for (int k = 0; k < 4; k++)
+        {
+            // check if it is possible to go to position
+            // (i + row[k], j + col[k]) from current position
+            if (isValid(mat, visited, i + row[k], j + col[k]))
+            {
+                // mark next cell as visited and enqueue it
+                visited[i + row[k]][j + col[k]] = true;
+                q.push({ i + row[k], j + col[k], dist + 1 });
+            }
